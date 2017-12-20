@@ -75,9 +75,11 @@ android {
         targetCompatibility JavaVersion.VERSION_1_8
     }
 }
+
 def packageTime() {
     return new Date().format("yyyyMMddHHmm")
 }
+
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
     implementation 'com.android.support.constraint:constraint-layout:1.0.2'
@@ -85,10 +87,9 @@ dependencies {
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
     implementation project(':GaryLiangLib')
-
-
     compile rootProject.ext.dependencies.appCompat
     compile rootProject.ext.dependencies.support
+
     //注解
     compile(rootProject.ext.dependencies.butterknife) {
         exclude group: 'com.android.support'
