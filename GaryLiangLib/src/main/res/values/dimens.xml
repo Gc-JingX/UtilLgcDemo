@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+
+    <dimen name="text_size10">10sp</dimen>
+    <dimen name="text_size12">12sp</dimen>
+    <dimen name="text_size14">14sp</dimen>
+    <dimen name="text_size16">16sp</dimen>
+    <dimen name="text_size18">18sp</dimen>
+    <dimen name="text_size22">22sp</dimen>
+    <dimen name="text_size28">28sp</dimen>
+
+    <dimen name="text_size38">38sp</dimen>
+
+
+    <dimen name="item_height40">40dp</dimen>
+    <dimen name="item_height45">45dp</dimen>
+    <dimen name="item_height48">48dp</dimen>
+    <dimen name="item_height50">50dp</dimen>
+    <dimen name="item_height60">60dp</dimen>
+    <dimen name="item_height70">70dp</dimen>
+</resources>
