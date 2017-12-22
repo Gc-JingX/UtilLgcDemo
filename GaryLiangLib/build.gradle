@@ -1,5 +1,8 @@
 apply plugin: 'com.android.library'
 
+apply plugin: 'com.github.dcendents.android-maven'
+//group='com.github.Lguocai'
+group='com.gitee.Lguocai'
 android {
     compileSdkVersion rootProject.ext.android.compileSdkVersion
 
