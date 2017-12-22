@@ -1,0 +1,101 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.android.compileSdkVersion
+    buildToolsVersion rootProject.ext.android.buildToolsVersion
+    defaultConfig {
+        applicationId "com.lgc.demo"
+        minSdkVersion rootProject.ext.android.minSdkVersion
+        targetSdkVersion rootProject.ext.android.targetSdkVersion
+        versionCode rootProject.ext.android.versionCode
+        versionName rootProject.ext.android.versionName
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+        multiDexEnabled true
+        android.applicationVariants.all { variant ->
+            variant.outputs.all {
+                if ("release".equals(variant.buildType.name)) {
+                    def fileName = "TeaPlatform_v${defaultConfig.versionName}_${packageTime()}_release.apk"
+                    outputFileName = fileName
+                } else if ("debug".equals(variant.buildType.name)) {
+                    def fileName = "TeaPlatform_v${defaultConfig.versionName}_${packageTime()}_debug.apk"
+                    outputFileName = fileName
+                }
+//                outputFileName = "${variant.name}-${variant.versionName}.apk"
+            }
+        }
+
+
+    }
+    signingConfigs {
+        debug {
+//            storeFile file("feijin.jks") //签名文件路径
+//            storePassword "feijin"
+//            keyAlias "feijin"
+//            keyPassword "feijin" //签名密码
+        }
+        release {
+//            storeFile file("feijin.jks") //签名文件路径
+//            storePassword "feijin"
+//            keyAlias "feijin"
+//            keyPassword "feijin" //签名密码
+        }
+    }
+    buildTypes {
+        debug {
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            //加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+//            signingConfig signingConfigs.debug
+        }
+
+        release {
+            //混淆
+            minifyEnabled false
+            //Zipalign优化
+            zipAlignEnabled false
+            // 移除无用的resource文件
+            shrinkResources false
+            //加载默认混淆配置文件
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+
+//            signingConfig signingConfigs.debug
+        }
+    }
+    //去除检查 错误提示
+    lintOptions {
+        checkReleaseBuilds false
+        abortOnError false
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+}
+
+def packageTime() {
+    return new Date().format("yyyyMMddHHmm")
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'com.android.support.constraint:constraint-layout:1.0.2'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'com.android.support.test:runner:1.0.1'
+    androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
+    implementation project(':GaryLiangLib')
+    compile rootProject.ext.dependencies.appCompat
+    compile rootProject.ext.dependencies.support
+
+    //注解
+    compile(rootProject.ext.dependencies.butterknife) {
+        exclude group: 'com.android.support'
+    }
+    annotationProcessor rootProject.ext.dependencies.butterknifecompiler
+
+}

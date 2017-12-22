@@ -28,8 +28,6 @@ import android.widget.LinearLayout;
 
 import com.gyf.barlibrary.ImmersionBar;
 import com.lgc.garylianglib.R;
-import com.lgc.garylianglib.actions.ActionCreator;
-import com.lgc.garylianglib.dispater.Dispatcher;
 import com.lgc.garylianglib.util.CustomToast;
 import com.lgc.garylianglib.util.L;
 import com.lgc.garylianglib.util.data.IsFastClick;
@@ -101,7 +99,6 @@ public class BaseActivity extends AppCompatActivity implements
     protected ImmersionBar mImmersionBar;
 
 
-    public static Dispatcher sDispatcher; // 调度器
     private boolean isClick = true;
 
     private Dialog dialog;
@@ -121,12 +118,6 @@ public class BaseActivity extends AppCompatActivity implements
 
     }
 
-    public void initDependencies() {
-        sDispatcher = Dispatcher.getInstance(new Bus());
-
-        ActionCreator.getInstance(sDispatcher);
-//        sActionsCreator = (LoginAction) ActionCreator.getInstance(sDispatcher);
-    }
 
 
     @Override

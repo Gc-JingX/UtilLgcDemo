@@ -1,0 +1,53 @@
+注意：第一次，加载库的时候 记得clean 一下 然后 rebuild一次 然后编译一次
+
+1.
+图片加载类 在这个目录下 com.lgc.garylianglib.util.imageloader
+ 分别是BGAImage或者 GlideUtil 可以提供使用    要实现自定义请在 里面添加自己需求的方法
+
+2. 缓存清除类 DataClearUtil  FileCacheUtils
+
+3.屏幕相关类  DensityUtil dp和PX相关转换建议用 dpToPx 方法
+
+4.弹窗 工具类 DialogUtil
+
+5.转换工具类  FormatUtils   在String.xml   加入%s  引入后，可以使用
+
+6.多次点击判断 IsFastClick
+
+7 MD5   MD5Utils
+
+8. SP 临时存储，用时，可以继承该类 MySharedPreferencesUtil
+
+9.价格格式化   PriceUtils
+
+10.res 文件获取  ResUtil
+
+11.toast 升级版 SnackbarUtils
+
+12.时间格式化   TimeUtils
+
+13.正则判断 UserUtil
+
+14  log 打印类 打包的时候 把 isDebug 设为false      L
+
+15  检查网络      CheckNetwork
+
+16  toast       CustomToast
+
+BaseActivity   不支持右滑关闭的基类 详细请看基类的详情注释
+
+MyActivity  支持右滑关闭的类
+
+BaseFragment 碎片基类   用法请注意，该类继承RootFragment 支持懒加载，
+
+FlowTagLayout 流式布局
+
+color_cus.xml  颜色自定义类
+
+dimens.xml  字体大小自定义类
+
+strings.xml  自定义提示文件
+
+styles_libcus.xml  自定义样式类
+
+ActivityStack   堆栈管理

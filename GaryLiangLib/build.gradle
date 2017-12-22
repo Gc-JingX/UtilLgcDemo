@@ -12,7 +12,6 @@ android {
         versionName rootProject.ext.android.lib_versionName
 
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
-
     }
 
     buildTypes {
@@ -28,9 +27,9 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     testImplementation 'junit:junit:4.12'
+
     androidTestImplementation 'com.android.support.test:runner:1.0.1'
     androidTestImplementation 'com.android.support.test.espresso:espresso-core:3.0.1'
-
 
 
     compile rootProject.ext.dependencies.gson
@@ -58,6 +57,10 @@ dependencies {
         exclude group: 'com.android.support'
     }
     annotationProcessor rootProject.ext.dependencies.butterknifecompiler
+
+
+    compile rootProject.ext.dependencies.eventbus
+
 }
 
 android.libraryVariants.all { variant ->

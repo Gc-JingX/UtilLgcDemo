@@ -1,0 +1,9 @@
+<resources>
+    <string name="app_name">Gary.Liang</string>
+
+
+    <string name="title_image">图片测试</string>
+    <string name="title_net">测试接口</string>
+
+    <string name="title_dialog">弹窗测试</string>
+</resources>

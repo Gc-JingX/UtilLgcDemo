@@ -94,5 +94,29 @@ public class Action {
             Log.e("xx", " mType " + mType + " mData " + mData.toString());
             return new Action(mType, mError, mData);
         }
+
+        @Override
+        public String toString() {
+            return "Builder{" +
+                    "mType='" + mType + '\'' +
+                    ", mError=" + mError +
+                    ", mData=" + mData +
+                    '}';
+        }
+    }
+    public  String getMsg(Action action) {
+        Object obj = action.getData().get(Action.KEY_MSG);
+        return obj == null ? "" : (String) obj;
+    }
+    public Object getUserData() {
+        return data.get(Action.KEY_OBJ);
+    }
+    @Override
+    public String toString() {
+        return "Action{" +
+                "type='" + type + '\'' +
+                ", errorType=" + errorType +
+                ", data=" + data +
+                '}';
     }
 }

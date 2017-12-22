@@ -88,4 +88,18 @@ public class GlideUtil {
                     .into(main_user_iv);
         }
     }
+
+    /**
+     * 停止下载
+     */
+    public static void pauseRequests() {
+        GlideApp.with(MyApplication.getInstance()).pauseRequests();
+    }
+
+    /**
+     * 恢复下载
+     */
+    public static void resumeRequests() {
+        GlideApp.with(MyApplication.getInstance()).resumeRequests();
+    }
 }

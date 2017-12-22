@@ -2,6 +2,8 @@ package com.lgc.garylianglib.util.config;
 
 import android.app.Application;
 
+import org.greenrobot.eventbus.EventBus;
+
 
 /**
  * @autor feijin_lgc
@@ -16,6 +18,7 @@ public class MyApplication extends Application {
     public void onCreate() {
         super.onCreate();
         mApp = this;
+
     }
 
 
